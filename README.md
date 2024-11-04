@@ -129,21 +129,17 @@ sudo /usr/local/nginx/sbin/nginx -s reload
 ## Stream Using FFmpeg: Use the following commands to stream to the Telegram servers you provided. You will need to run each command for every stream:
 
 ```txt
-ffmpeg -re -i input\_video.mp4 -c\:v copy -c\:a aac -f flv rtmps://dc5-1.rtmp.t.me/s/<Your-Stream-Key>
-``` 
+ ffmpeg -re -i input\_video.mp4 -c\:v copy -c\:a aac -f flv rtmps://dc5-1.rtmp.t.me/s/<Your-Stream-Key>
+```
 
 # Step 4: Verifying Your Streams
 
-Check Nginx Logs: You can monitor the logs to see if the streams are being received correctly. The logs are usually located in /usr/local/nginx/logs/error.log or can be configured in your Nginx config.
+- Check Nginx Logs: You can monitor the logs to see if the streams are being received correctly. The logs are usually located in /usr/local/nginx/logs/error.log or can be configured in your Nginx config.
+- Test Streaming: Ensure that your videos are streaming correctly by checking them in your Telegram groups.
 
-Test Streaming: Ensure that your videos are streaming correctly by checking them in your Telegram groups.
+## Additional Notes
 
-Additional Notes
+- Make sure your server's firewall allows traffic on port 1935 for RTMP.
 
-Make sure your server's firewall allows traffic on port 1935 for RTMP.
+- Adjust the FFmpeg commands as needed for your input video, bitrate, and encoding settings.
 
-Adjust the FFmpeg commands as needed for your input video, bitrate, and encoding settings.
-
-For a GUI, consider integrating a simple web interface where you can manage uploads and select streaming destinations.
-
-If you need further customization or encounter any issues, feel free to ask!
